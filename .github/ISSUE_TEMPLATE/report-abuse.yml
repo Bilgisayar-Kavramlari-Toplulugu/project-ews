@@ -1,0 +1,115 @@
+name: 📜 Uygunsuz İçerik Bildir
+description: Taciz, nefret söylemi veya davranış kurallarına aykırı içerikleri bildirmek için kullanın
+title: "[Rapor] "
+labels: ["report:abuse", "needs-triage"]
+assignees:
+  - elifsoyleyici
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔒 Gizlilik ve Güvenlik
+        
+        Bu rapor proje yöneticileri tarafından gizli olarak incelenecektir.
+        Kişisel bilgileriniz ve raporunuz korunacaktır.
+        
+        **⚠️ Acil Güvenlik Açıkları İçin:** [Security Advisories](https://github.com/Bilgisayar-Kavramlari-Toplulugu/project-ews/security/advisories/new) kullanın.
+
+  - type: dropdown
+    id: violation-type
+    attributes:
+      label: İhlal Türü
+      description: Ne tür bir ihlal bildirmek istiyorsunuz?
+      options:
+        - Taciz veya zorbalık
+        - Nefret söylemi
+        - Ayrımcılık
+        - Kişisel bilgi paylaşımı (Doxing)
+        - Spam veya istenmeyen içerik
+        - Tehdit veya şiddet içeriği
+        - Telif hakkı ihlali
+        - Uygunsuz cinsel içerik
+        - Diğer (lütfen açıklayınız)
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Bildirmek İstediğiniz İçerik
+      description: |
+        Lütfen durumu detaylı bir şekilde açıklayın:
+        
+        **Şunları belirtin:**
+        - 📍 Nerede oldu? (Issue, PR, Comment, Discussion)
+        - 👤 Kim tarafından? (Kullanıcı adı)
+        - 📅 Ne zaman? (Tarih ve zaman)
+        - 📝 Tam olarak ne oldu?
+      placeholder: |
+        Örnek:
+        
+        - Yer: Issue #123'teki yorum
+        - Kişi: @kullaniciadi
+        - Zaman: 15 Kasım 2025, 14:30
+        - Olay: Kullanıcı "..." şeklinde taciz içerikli mesaj paylaştı
+    validations:
+      required: true
+
+  - type: textarea
+    id: links
+    attributes:
+      label: İlgili Bağlantılar ve Kanıtlar
+      description: İhlale dair GitHub linkleri, ekran görüntüleri veya diğer kanıtlar
+      placeholder: |
+        https://github.com/org/repo/issues/123#issuecomment-456789
+        https://github.com/org/repo/pull/456
+        
+        (Buraya ekran görüntülerini sürükleyip bırakabilirsiniz)
+    validations:
+      required: false
+
+  - type: input
+    id: reporter
+    attributes:
+      label: İletişim Bilgisi (Opsiyonel)
+      description: Size nasıl ulaşabiliriz? GitHub kullanıcı adınızı girin (opsiyonel)
+      placeholder: "@kullaniciadi"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Ek Bilgiler
+      description: Eklemek istediğiniz başka bir şey var mı?
+      placeholder: İlave context, geçmiş olaylar, vb.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Onay
+      description: Lütfen aşağıdakileri onaylayın
+      options:
+        - label: Bu bildirimi iyi niyetle ve doğru bilgilerle yapıyorum
+          required: true
+        - label: Yanlış bildirim yapmanın sonuçlarının farkındayım
+          required: true
+        - label: Davranış Kurallarını okudum ve anladım
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ### 📋 Sonraki Adımlar
+        
+        1. ⏱️ **24 saat içinde** raporunuz incelenecektir.
+        2. 📧 Gerekirse sizinle iletişime geçilecektir.
+        3. ✅ Sonuç hakkında bilgilendirileceksiniz.
+        4. 🔒 Gizliliğiniz korunacaktır.
+        
+        🙏 **Teşekkürler!** Topluluğumuzu güvenli tutmaya yardımcı olduğunuz için minnettarız.
